@@ -4,9 +4,11 @@
 ;-------------------------------------------------------------------------------
 ; Windows Platform
 ;-------------------------------------------------------------------------------
-.VSBasePath			= '../External/SDK/VS13.4'
-.WindowsSDKBasePath	= '../External/SDK/Windows8.1'
-.ClangBasePath		= '../External/SDK/ClangForWindows/3.6'
+
+.VSBasePath         = 'C:\Program Files (x86)\Microsoft Visual Studio 12.0'
+.WindowsSDKBasePath = 'C:\Program Files (x86)\Windows Kits\8.1'
+.ClangBasePath      = 'C:\Program Files\LLVM'
+
 
 ;-------------------------------------------------------------------------------
 ; Settings
@@ -509,8 +511,8 @@ VCXProject( 'UpdateSolution-proj' )
 
     .GenerateProjectsCommands =
     [
-	    .ProjectBuildCommand		= 'cd ^$(SolutionDir)\..\..\Code\ &amp; fbuild solution -vs'
-	    .ProjectRebuildCommand		= 'cd ^$(SolutionDir)\..\..\Code\ &amp; fbuild solution -vs -clean'
+	    .ProjectBuildCommand		= 'cd ^$(SolutionDir)\..\..\Code\ &amp; fbuild solution'
+	    .ProjectRebuildCommand		= 'cd ^$(SolutionDir)\..\..\Code\ &amp; fbuild solution -clean'
     ]
 
     .ProjectX86Debug		= [ Using( .ProjectX86Debug )	    Using( .GenerateProjectsCommands ) ]
