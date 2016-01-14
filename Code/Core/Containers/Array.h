@@ -423,6 +423,11 @@ void Array< T >::Erase( T * const iter )
 template < class T >
 Array< T > & Array< T >::operator = ( const Array< T > & other )
 {
+	if ( this == &other )
+	{
+		return *this;
+	}
+
 	Clear();
 
 	// need to reallocate?
